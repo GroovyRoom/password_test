@@ -1,6 +1,5 @@
 Last Nmae: Lee
 First Name: Chang Suk
-Student #: 301382707
 
 My project is to provide a service to test the strength of the password.
 I'm using nodeJS to take the password from the user and then send the password to 
