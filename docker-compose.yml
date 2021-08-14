@@ -1,0 +1,31 @@
+version: "3"
+services:
+
+  rabbitmq:
+    image: rabbitmq:3
+    environment:
+    - RABBITMQ_DEFAULT_USER=guest
+    - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "127.0.0.1:5672:5672"
+
+
+  app:
+    container_name: node
+    restart: always
+    build:
+      context: .
+      dockerfile: node.Dockerfile
+    ports:
+      - '3000:3000'
+
+  java:
+    build:
+      context: .
+      dockerfile: java.Dockerfile
+
+  python:
+    build:
+      context: .
+      dockerfile: python.Dockerfile
+
